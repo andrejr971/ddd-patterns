@@ -1,4 +1,4 @@
-import { OrderItem } from "./order_item";
+import { OrderItem } from "./order-item";
 
 export class Order {
   private _id: string;
@@ -42,6 +42,10 @@ export class Order {
     }
 
     return true;
+  }
+
+  changeItems(items: OrderItem[]) {
+    this._items = items;
   }
 
   total(): number {
