@@ -1,6 +1,7 @@
-import { Product } from "../../domain/products/entities/product";
-import { ProductRepositoryInterface } from "../../domain/products/repositories/product-repository.interface";
-import { ProductModel } from "../typeorm/sequelize/models/product.model";
+import { Product } from "../../../domain/products/entities/product";
+import { ProductRepositoryInterface } from "../../../domain/products/repositories/product-repository.interface";
+import { ProductModel } from "./product.model";
+
 
 export class ProductRepository implements ProductRepositoryInterface {
   async create(product: Product): Promise<void> {
