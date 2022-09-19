@@ -2,6 +2,7 @@ import { Request, Response, Router } from "express";
 import { CreateCustomerUseCase } from "../../../usecases/customers/create/create.customer.usecase";
 import { ListCustomerUseCase } from "../../../usecases/customers/list/list.customer.usecase";
 import { CustomerRepository } from "../../customers/typeorm/customer.repository";
+import CustomerPresenter from "../presenters/customer.presesnter";
 
 const customerRoute = Router();
 
@@ -30,7 +31,7 @@ customerRoute.get("/", async (req: Request, res: Response) => {
 
   res.format({
     json: async () => res.send(output),
-    // xml: async () => res.send(CustomerPresenter.listXML(output)),
+    xml: async () => res.send(CustomerPresenter.listXML(output)),
   });
 });
 
